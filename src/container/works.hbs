@@ -7,30 +7,11 @@
 	{{#with main}}
   <main>
     <section>
-      {{#with summary}}
-      <div>
-         {{> title data=title big=true}}
-         </div> 
-      {{/with}}
-      <div>
-        <p>{{summary.text}}</p>
-      </div>
+     {{> title data="Work history" big=true }}
+       <div> Work in progress...</div>
     </section>
-
-  {{#with experience}} 
-    <section>
-      <div>
-        {{> title data=title big=false}}
-      </div>
-      <div>
-        <p>{{text}}</p>
-      </div>
-    </section>
-    {{/with}}
-  </main>
+    </main>
 {{/with}}
-  
-
 </div>
 
 {{!--
