@@ -150,10 +150,48 @@ page: {
     page: {
       title: 'Resume | Work',
     },
-    
       header,
     
-      main: {},
+      main: {
+        works: [{
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: 'https://it-brains.com.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: null,
+          },
+
+          projectAmount: 3,
+          projects: [{
+            name: 'Resume',
+            url: 'https://it-resume.com.ua/',
+            about: 'Good boy Dmytro',
+            stackAmount: 3,
+            stacks: [
+              {name: 'React.js',},
+              {name: 'HTML / CSS',},
+              {name: 'Node.js',},
+              
+            ],
+            
+            awards: [
+              {
+                name: 'Best developer in the world',
+              },
+              {
+                name: 'Best developer in the universe',
+              },
+            
+            ],
+            awardAmount: 2,
+          },
+
+          ],
+        }],
+      },
       footer,
 
 })

@@ -8,7 +8,54 @@
   <main>
     <section>
      {{> title data="Work history" big=true }}
-       <div> Work in progress...</div>
+       <div>
+        <ul>
+        {{#each works}}
+        <ul>
+            <li>
+              <div>{{position}}</div>
+              <div>{{#if company.url}} {{>link href=company.url text=company.name blank=true noLine=true}} {{else}} <b>{{company.name}} </b>{{/if}}</div>
+              <br>
+
+              <div>{{duration.from}} - {{#if duration.to}} {{duration.to}} 
+              {{else}} (Still working) {{/if}} </div>
+              
+              <br>
+              <div> {{> link text=company.name href=company.url blank=true noLine=true}}</div>
+              <br>  <br>
+              <div><strong>Projects ({{projectAmount}})</strong></div>
+              <br>
+              <ul>
+                {{#each projects}}
+                <li><div> {{> link text=name href=url blank=true noLine=true}}</div>
+                <div>
+                  <p> {{about}}</p>
+                </div>
+                <br>
+              <div>
+                  <em>Project stacks ({{stackAmount}})</em>
+                <ul> {{#each stacks}}
+                   <li>{{name}}</li>
+                    {{/each}}
+                  </ul>
+              </div>
+        <br>
+                <div>
+                  <em>Project awards ({{awardAmount}})</em>
+                  <ul> {{#each awards}}
+                    <li>{{name}}</li>
+                    {{/each}}
+                    </ul>
+                </div>
+                <br>
+                </li>
+                {{/each}}
+              </ul>
+            </li>
+            <br>
+        {{/each}}
+        </ul>
+       </div>
     </section>
     </main>
 {{/with}}

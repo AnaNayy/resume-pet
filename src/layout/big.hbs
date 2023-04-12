@@ -14,13 +14,7 @@
   </head>
 
   <body>
-
-	<nav>
-	{{> link text="Summary" href="/summary" line=true }}
-	{{> link text="Skills" href="/skills" line=true }}
-  {{> link text="Education" href="/education" line=true }}
-  {{> link text="Work" href="/works" line=true }}
-  </nav>
+    {{> nav}}
 
   <br>
   <hr>
@@ -37,7 +31,7 @@
 		{{#with social}}
 		{{> link text=email.text href=email.href blank=true }}
 		{{> link text=phone.text href=phone.href blank=true }}
-		{{> link text=linkedin.text href=linkedin.href blank=true }}
+		{{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
 		{{/with}} 
 	</div>
 	<br>
