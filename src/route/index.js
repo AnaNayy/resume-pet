@@ -12,7 +12,7 @@ var header = {
   },
   position: 'Junior Fullstack JS Developer',
   salary: '$1600',
-  address: 'Silicone valley',
+  address: 'Silicon valley, California',
 }
 
 var footer = {
