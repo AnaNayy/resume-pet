@@ -1,0 +1,86 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+ 
+<div>
+  {{#with person}}
+  <main>
+    <section>
+      {{!-- {{> title data="Person:" big=false }}  --}}
+      <div>
+          <h1>{{name}}</h1> <em> {{age}}, {{gender}} </em> 
+           <p>Address: {{address.street}}, {{address.city}}, {{address.state}}, {{address.zip}}, {{address.country}}</p>
+          </div>
+       <br>
+       <hr>
+       
+        <section> <h3>Education</h3>
+        <ul>{{#each education}}
+          <li><b>Degree: </b> {{degree}}</li>
+          <li><b>Major: </b> {{major}}</li>
+            <li><b>University:</b> {{university}}</li>
+            <li><b>Graduation year:</b> {{graduationYear}}</li>
+          </li> {{/each}}</ul></section>
+       <br>
+       <hr>
+        <section> <h3>Work experience</h3>
+        <ul>{{#each workExperience}}
+          <li><b>Company:</b> {{company}}</li>
+          <li><b>Job title:</b> {{title}}</li>
+          <li><b>Work duration:</b> {{startDate}}-{{endDate}}</li>
+          <li><b>Duties:</b> {{responsibilities}} </li>
+          {{!-- {{/each}}</ul> --}}
+     
+       <hr>
+        <div><h3>About "Google" </h3></div>
+<div><ul>
+  <li>Founded in: {{year_founded}}</li>
+  <li>Industry field: {{industry}}</li><hr>
+  <li>Company head: {{#each employees}} {{name}}, {{position}} of {{department}} department
+
+  <li>Leads a project: {{#each projects}} <b>"{{name}}"</b>, which is {{description}} ( Project status: {{status}} )
+    <hr>
+    <br>
+  </div> 
+  <div><p>About <b>"{{name}}"</b></p>
+   <em>Supported by --</em> {{#each teams}} "{{team_name}}" <br>
+  <em>Led by --</em> <b>{{team_leader.name}}</b>, {{team_leader.title}}  / <ins>{{team_leader.email}}</ins> <br>
+
+  <br>
+    <em>Team members --</em> 
+    {{#each team_members}}<ul>
+      <li><b>{{name}}</b>, {{title}}/ <u>{{email}}</u> <br> Is good at: {{skills}} 
+      <br>
+      <div>
+      Accomplished projects: {{#each projects}} <b>"{{name}}"</b>, {{description}}, Technologies used: {{technologies}}
+       </div>
+       <br>
+      <div>Worked with:
+        {{#each team_members}} <ul>
+          <li> 
+              {{name}}, {{title}}
+        </li>
+        </ul>{{/each}}
+      </div>
+      {{/each}}</li>
+    </ul> 
+    {{/each}}
+    {{/each}}
+
+     {{/each}}</li>{{/each}}</li>
+  
+      </ul></div>
+          </section>
+    
+      {{/each}}</ul>
+     
+  </section>
+</main>
+{{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
