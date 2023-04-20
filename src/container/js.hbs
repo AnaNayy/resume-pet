@@ -1,0 +1,73 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+  <section>
+  <div><h1>{{name}}</h1></div>
+    <br>
+    <hr>
+        <div>
+          <h3>{{description}}</h3>
+        {{#with history}}
+        <p>Founded in {{year}} by {{founder}}</p>
+        {{/with}}
+        </div>
+    <hr>
+        <div>
+          <p><b>Includes types: </b> </p>
+          <ul>{{#each types}} <li>{{this}}</li> {{/each}}</ul>
+        </div>
+    <hr>
+      <div>
+          <p><b>Includes features: </b></p>
+          <ul>{{#each features}} <li>{{this}}</li> {{/each}}</ul>
+        </div>
+    <hr>
+      <div>
+          <p><b>Includes libraries: </b></p>
+          <ul>{{#each libraries}} <li>{{this}}</li> {{/each}}</ul>
+        </div>
+    <hr>
+      <div>
+          <p><b>Includes tools: </b></p>
+          <ul>{{#each tools}} <li>{{this}}</li> {{/each}}</ul>
+        </div>
+    <hr>
+    <div>
+      <p><b> Syntax uses: </b></p>
+      <ul>
+          {{#with syntax}}
+          <p>Variables: </p>
+          {{#each variables}} <li>{{this}}</li> {{/each}}
+          <hr>
+          <p>Functions: </p>
+          {{#each functions}} <li>{{this}}</li> {{/each}}
+          <hr>
+          <p>Conditionals: </p>
+          {{#each conditionals}} <li>{{this}}</li> {{/each}}
+          <hr>
+          <p>Loops: </p>
+          {{#each loops}} <li>{{this}}</li> {{/each}}
+          <hr>
+          <p>Classes: </p>
+          {{#each classes}} <li>{{this}}</li> {{/each}}
+         {{/with}} 
+    </ul> 
+   </div>
+   <hr>
+   <div>
+      <h2> Communities that support JS: </h2>
+      <ol>
+        {{#each community}}
+        <li>{{name}} ({{type}})</li> {{/each}}
+      </ol>
+   </div>
+  </section>
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
