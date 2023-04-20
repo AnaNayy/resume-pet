@@ -1,0 +1,159 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+<div>{{> title data="About car" big=true}} </div>
+<hr>
+<main>
+  <section>
+  <div><h1>{{make}} "{{model}}"</h1>
+  <p><b>Year: {{year}} </b> </p>
+  <p><b>Color: {{color}} </b> </p>
+  </div>
+    <br>
+    <hr>
+        <div>{{#with features}}
+          <h3>About car interior </h3>
+            {{#with interior}}
+             <ul>
+              {{#with seats}}
+                <h3><b>Seats: </b> </h3>
+                <li>material: {{material}} </li>
+                <li>color: {{color}} </li>
+                <li>heated: {{#if heated includeZero=true}} yes {{/if}}</li>
+                <li>ventilated: {{#if ventilated includeZero=true}} yes {{/if}} </li>
+                {{/with}}
+          </ul>
+        <hr>
+          <ul>
+              {{#with dashboard}}
+                <h3><b>Dashboard: </b> </h3>
+                <li>material: {{material}} </li>
+                <li>color: {{color}} </li>
+                <li>display: {{#with display}}
+                  <ul>
+                    <li>type: {{type}}</li>
+                    <li>size: {{size}}</li>
+                    <li>resolution: {{resolution}}</li>
+                    <li>touchscreen: {{#if touchscreen includeZero=true}} yes {{/if}}</li>
+                  </ul>
+               {{/with}}{{/with}}
+          </ul>
+        <hr>
+            <ul>
+              {{#with audio}}
+                <h3><b>Audio: </b></h3>
+                <li>system: {{system}} </li>
+                <li>speakers: {{speakers}} </li>
+                <li>subwoofer: {{#if subwoofer includeZero=true}} yes {{/if}}</li>
+                <li>bluetooth: {{#if bluetooth includeZero=true}} yes {{/if}} </li>
+                <li>USB: {{#if USB includeZero=true}} yes {{/if}} </li>
+                {{/with}}
+          </ul>
+          
+        {{/with}}
+        <hr>
+        <h3>About car exterior </h3>
+        {{#with exterior}}
+          <ul>
+             {{#with wheels}}
+                <h3><b>Wheels: </b> </h3>
+                <li>size: {{size}} </li>
+                <li>color: {{color}} </li>
+                <li>type: {{type}}</li>
+                {{/with}}
+      <hr>
+        {{#with headlights}}
+                <h3><b>Headlights: </b></h3>
+                <li>type: {{type}}</li>
+                <li>brightness: {{brightness}}</li>
+                <li>automatic: {{#if automatic includeZero=true}} yes {{/if}} </li>
+
+        {{/with}}
+<hr>
+        {{#with sunroof}}
+                <h3><b>Sunroof: </b></h3>
+                <li>type: {{type}}</li>
+                <li>size: {{size}}</li>
+                <li>automatic: {{#if automatic includeZero=true}} yes {{/if}} </li>
+        {{/with}}
+         </ul>  
+       {{/with}}
+<hr>
+          <h3>About car safety </h3>
+            {{#with safety}}
+             <ul>
+              {{#with airbags}}
+                <h3><b>Airbags: </b></h3>
+                <li>front: {{front}} </li>
+                <li>side: {{side}} </li>
+                <li>knee: {{knee}} </li>
+                <li>rear: {{rear}} </li>
+                {{/with}}
+          </ul>
+          
+          <hr>
+          <ul>
+              {{#with assistance}}
+                <h3><b>Assistance: </b></h3>
+                <li>blind_spot_monitoring: {{#if blind_spot_monitoring includeZero=true}} yes {{/if}} </li>
+                <li>rear_cross_traffic_alert: {{#if rear_cross_traffic_alert includeZero=true}} yes {{/if}} </li>
+                <li>lane_departure_warning: {{#if lane_departure_warning includeZero=true}} yes {{/if}} </li>
+                <li>adaptive_cruise_control: {{#if adaptive_cruise_control includeZero=true}} yes {{/if}} </li>
+                <li>collision_warning: {{#if collision_warning includeZero=true}} yes {{/if}} </li>
+                {{/with}}
+          </ul> 
+        {{/with}}
+        {{/with}}
+        </div>  
+  <hr>
+    <div>
+    <h2><b>Engine info</b> </h2>
+    {{#with engine}}
+    <ul>
+        <li>type: {{type}} </li>
+        <li>displacement: {{displacement}} </li>
+        <li>horsepower: {{horsepower}} </li>
+        <li>torque: {{torque}} </li>
+        <li>transmission: 
+          {{#with transmission}} <ul>
+          <li>type: {{type}}</li>
+          <li>gears: {{gears}}</li></ul>
+          {{/with}}</li>
+    </ul>
+    {{/with}}
+    </div>
+    <hr>
+    <div>
+      <h2><b>Fuel consumption</b></h2>
+      {{#with fuel_economy}}
+      <ul>
+        <li>City: {{city}}</li>
+        <li>Highway: {{highway}}</li>
+        <li>Combined: {{combined}}</li>
+      </ul>
+      {{/with}}
+    </div>
+    <hr>
+    <div>
+      <h2><b>About price</b></h2>
+      {{#with price}}
+      <ul>
+        <li>Base: {{base}}</li>
+        <li>Destination: {{destination}}</li>
+        <li>Options: {{#with options}} 
+          <ul>
+            <li>Navigation: {{navigation}}</li>
+            <li>Moonroof: {{moonroof}}</li>
+            <li>Premium_paint: {{premium_paint}}</li>
+          </ul>{{/with}}</li>
+        <li>Total: {{total}}</li>
+      </ul>
+      {{/with}}
+    </div>
+  </section>
+</main>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}} 
