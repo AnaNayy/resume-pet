@@ -18,7 +18,7 @@
 </section>
 
 <hr>
-<section class="col-3">
+<section>
     {{#with header}}
       <h1>{{title}}</h1>
       <p>{{description}}</p>
@@ -179,19 +179,19 @@
 <div class="row">
   <div class="col-3">
     {{#each navigation}}
-    <a href="{{href}}" class="btn ">{{text}}</a>
+    <p><a href="{{href}}" class="btn ">{{text}}</a></p>
     {{/each}}
   </div>
 
   <div class="col-3">
     {{#each socialMedia}}
-    <button src="{{link}}" class="btn btn-outline-dark btn-sm">{{name}}</button>
+    <p><button src="{{link}}" class="btn btn-outline-dark btn-sm">{{name}}</button></p>
     {{/each}}
   </div>
 
   <div class="col-3">
     {{#each partners}}
-    <button src="{{link}}" class="btn btn-outline-info btn-sm">{{name}}</button>
+    <p><button src="{{link}}" class="btn btn-outline-info btn-sm">{{name}}</button></p>
     {{/each}}
   </div>
 </div>
