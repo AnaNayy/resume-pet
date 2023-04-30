@@ -1,0 +1,28 @@
+<div>
+    <ul>
+    {{#each list}}
+        <li>
+            <button {{#if @last}} disabled {{/if}}>{{name}} - {{@index}}</button> 
+        </li>
+    {{/each}}
+    <br>
+    <br>
+        {{#each user}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+         <br>
+    <br>
+        {{#each user}}
+            <li>
+                {{@key}}:
+                {{#if value}}
+                    {{value}}
+                {{else}}
+                    {{text}}
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
