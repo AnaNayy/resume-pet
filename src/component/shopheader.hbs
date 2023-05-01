@@ -1,0 +1,14 @@
+ 
+
+{{#with navigation}}
+  <div class="card mt-3">
+        <div class="nav">
+          {{#each links}}
+                <div class="nav-item">
+                    <a href="{{href}}" class="nav-link {{#if @last}} disabled {{/if}}active">{{text}}</a>
+                </div>
+          {{/each}}
+        
+        </div>
+  </div>
+{{/with}}
