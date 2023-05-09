@@ -1,0 +1,126 @@
+<main>
+    <section class="ms-1 mt-5 mb-5">
+    <ol class="breadcrumb">
+    {{#each breadcrumb}}
+        <li class="breadcrumb-item {{#if @last}}text-dark{{/if}}">
+        {{#if url}}
+            <a href="{{url}}">{{name}}</a>
+        {{else}}
+            {{name}}
+        {{/if}}
+        </li>
+    {{/each}}
+    </ol>
+</section>
+    <h1 class="mt-5 mb-3 ms-1">{{header}}</h1>
+    <section class="row g-2 mt-4 mb-5">
+        {{#each sortBlock}}
+        <div class="col-3 ms-1">
+            <select class="form-select form-select-lg">
+                    <option>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                    {{/each}}
+                </select>
+        </div>    
+        {{/each}}
+</section>
+
+
+<div class="row">
+    {{#with filterBlock}}
+   
+    <div class="card col-4 p-2 ms-2"> 
+        {{#with sellers}}
+     <div class="form-label ms-3">{{title}}</div>
+        {{#each list}}
+                <div class="form-check m-2 ms-3">
+                <label class="form-check-label">{{value}}</label>
+                <input type="checkbox" class="form-check-input">
+                </div>
+            {{/each}}
+             {{/with}}
+  <div class="m-1 ms-2"><hr></div>
+  {{#with brands}}
+    <div class="form-label ms-3">{{title}}</div>
+    <div class="col-11 ms-2 mt-1 p-1">
+        <input class="form-control m-1" placeholder="{{input.placeholder}}">
+        
+        {{#each options}}
+                <div class="form-check m-3 ms-2">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">{{value}}</label>
+                </div>
+        {{/each}}
+     </div>
+<div class="m-1 ms-2 mt-0"><hr></div>
+  {{/with}}
+{{#with price}}
+    <div class="form-label ms-3">{{title}}</div>
+    {{#with range}}
+    <div class="col-11 ms-2 mt-2 p-1">
+    <input class="form-control m-1" placeholder="{{from}}">
+    <input class="form-control m-1 mt-3" placeholder="{{to}}"> 
+    {{/with}}
+    {{#with button}}
+        <a href="{{link}}" class="btn btn-outline-secondary ms-1 mt-3 col-2">{{text}}</a>
+    {{/with}}
+    </div>
+   
+{{/with}}
+
+{{#each filterList}}
+<div class="ms-2 me-1"><hr></div>
+    <div class="form-label ms-3">{{title}}</div>
+    {{#each options}}
+    <div class="col-11 ms-2 p-1">
+                <div class="form-check m-1">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">{{value}}</label>
+                </div>
+    </div>            
+        {{/each}}
+
+{{/each}} 
+</div>
+
+
+{{/with}}
+<section class="row col-8 ms-1">
+{{#each goodsList}}
+{{!-- <div class="card col-5 ms-3 mb-3 p-0">
+        <img class="card-image-top mb-2" src="{{img}}" alt="image">
+        
+           <div class="row ms-3 mt-2">
+            {{#if isHot}} <span class="badge rounded-pill text-bg-warning text-light col-3 p-2 m-1">HOT!</span>{{/if}}
+            {{#if isNew}} <span class="badge rounded-pill text-bg-primary col-3 p-2 m-1">New</span>{{/if}}</div>
+               <div class="row mt-3 mb-3 ms-3">{{#if isFast}} <span class="badge text-bg-success col-7 p-2 m-1">Fast shipping</span>{{/if}}
+              {{#if isFree}} <span class="badge text-bg-secondary col-7 p-2 m-1">Free shipping</span>{{/if}}
+        </div>
+        <div class="card-body">
+        <div><h4 class="m-2">{{name}}</h4>
+        <p class="m-2">{{review.amount}} {{review.text}}</p>
+        <h3 class="m-2">{{price}}</h3>
+        <p class="m-2">{{delivery}}</p>
+
+       <div class="m-t-2 mb-3"> {{#each buttons}}
+        <a href="{{link}}" class="btn {{#if @first}}btn-primary {{else}}btn-secondary {{/if}}ms-1 mt-3 col-8">{{text}}</a>
+        {{/each}}</div>
+
+        <div class="mt-5">
+            <ul>{{#each characteristics}}
+                <li class="mt-4">{{title}}: {{value}}</li>
+            {{/each}}</ul>
+        </div>
+
+        </div>
+        </div>
+    </div> --}}
+{{> catalogItem}}
+{{/each}}
+</section>
+</div>
+
+{{> shopaction}}
+    <div class="mt-5 mb-3"><hr></div>
+</main>
