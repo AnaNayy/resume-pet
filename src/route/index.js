@@ -41,9 +41,13 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+
+    layout: 'index',
+
+  })
   //                  ↑↑ сюди вводимо JSON дані
-})
+}),
 
 // ================================================================
 
@@ -3918,7 +3922,15 @@ router.get('/shopcatalog', function (req, res) {
 }),
 
 // ================================================================
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'shop',
+    
+  })
+})
 // ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
